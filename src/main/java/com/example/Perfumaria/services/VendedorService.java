@@ -1,5 +1,6 @@
 package com.example.Perfumaria.services;
 
+import com.example.Perfumaria.models.Perfume;
 import com.example.Perfumaria.models.Vendedor;
 import com.example.Perfumaria.repository.VendedorRepository;
 import jakarta.transaction.Transactional;
@@ -30,5 +31,13 @@ public class VendedorService {
 
     public Vendedor salvar(Vendedor vendedor) {
         return vendedorRepository.save(vendedor);
+    }
+
+    public Vendedor atualizar(Vendedor vendedor) {
+        return vendedorRepository.save(vendedor);
+    }
+
+    public void deletar(Long id) {
+        vendedorRepository.deleteById(id);
     }
 }
