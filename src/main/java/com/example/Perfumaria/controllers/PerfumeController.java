@@ -33,6 +33,19 @@ public class PerfumeController {
     public ResponseEntity<Perfume> criar(@RequestBody Perfume perfume) {
         return ResponseEntity.ok(perfumeService.criar(perfume));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Perfume> atualizar(@PathVariable Long id, @RequestBody Perfume perfume) {
+        perfume.setId(id);
+        Perfume perfumeAtualizado = perfumeService.atualizar(perfume);
+        return ResponseEntity.ok(perfumeAtualizado);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        perfumeService.deletar(id);
+        return ResponseEntity.noContent().build();
+    }
 }
 
 

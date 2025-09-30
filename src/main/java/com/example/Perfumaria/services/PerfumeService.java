@@ -27,4 +27,12 @@ public class PerfumeService {
     public List<Perfume> buscarPorMarca(Long Id) {
         return perfumeRepository.findByMarcaId(Id);
     }
+
+    public Perfume atualizar(Perfume perfume) {
+        return perfumeRepository.save(perfume);
+    }
+
+    public void deletar(Long id) {
+        perfumeRepository.deleteById(id);
+    }
 }
